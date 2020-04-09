@@ -1,0 +1,11 @@
+Query:
+  type: object
+  config:
+    fields:
+      posts:
+        type: PostConnection
+        argsBuilder: Relay::ForwardConnection
+        resolve: "@=resolver('allPosts', [args])"
+      #posts:
+        #type: "[Post!]!"
+        #resolve: "@=resolver('allPosts')"

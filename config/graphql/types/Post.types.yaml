@@ -1,0 +1,11 @@
+Post:
+  type: object
+  config:
+    fields:
+      id:
+        type: "ID!"
+        builder: "Relay::GlobalId"
+      title:
+        type: "String!"
+      likes:
+        type: "[User!]!"

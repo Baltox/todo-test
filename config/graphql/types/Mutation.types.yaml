@@ -1,0 +1,24 @@
+Mutation:
+  type: object
+  config:
+    fields:
+      createPost:
+        type: CreatePostPayload!
+        resolve: "@=mutation('create_post', [args['input']['postTitle']])"
+        args:
+          input:
+            type: CreatePostInput!
+
+CreatePostPayload:
+  type: object
+  config:
+    fields:
+      post:
+        type: "Post"
+
+CreatePostInput:
+  type: input-object
+  config:
+    fields:
+      postTitle:
+        type: "String!"

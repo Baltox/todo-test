@@ -1,0 +1,62 @@
+input CreatePostInput {
+  postTitle: String!
+}
+
+type CreatePostPayload {
+  post: Post
+}
+
+type Mutation {
+  createPost(input: CreatePostInput!): CreatePostPayload!
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type Post {
+  """The ID of an object"""
+  id: ID!
+  title: String!
+  likes: [User!]!
+}
+
+"""A connection to a list of items."""
+type PostConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """Information to aid in pagination."""
+  edges: [PostEdge]
+}
+
+"""An edge in a connection."""
+type PostEdge {
+  """The item at the end of the edge."""
+  node: Post!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+type Query {
+  posts(after: String, first: Int): PostConnection
+}
+
+type User {
+  """The ID of an object"""
+  id: ID!
+  name: String!
+  avatar: String
+}

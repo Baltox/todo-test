@@ -1,0 +1,11 @@
+User:
+  type: object
+  config:
+    fields:
+      id:
+        type: "ID!"
+        builder: "Relay::GlobalId"
+      name:
+        type: "String!"
+      avatar:
+        type: "String"
