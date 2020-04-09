@@ -9,5 +9,7 @@ class AppControllerTest extends TestCase
     public function testSomething()
     {
         $this->assertTrue(true);
+
+        $this->assertTrue(true);
     }
 }
