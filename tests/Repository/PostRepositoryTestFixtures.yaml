@@ -1,0 +1,3 @@
+App\Entity\Post:
+    post{1..10}:
+      title: <realText(30)>

@@ -22,3 +22,8 @@ docker-compose exec php yarn relay --watch
 ```shell
 docker-compose exec php bin/console graphql:dump-schema --format graphql --file config/graphql/schema.graphql
 ```
+
+# Load fixtures
+```shell
+docker-compose exec php bin/console doctrine:fixtures:load
+```
